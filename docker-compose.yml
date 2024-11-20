@@ -27,7 +27,7 @@ services:
       - db
 
   sheet-app:
-    image: vincediegane/sheet-app
+#    image: vincediegane/sheet-app
     build: .
     ports:
       - "8080:8080"

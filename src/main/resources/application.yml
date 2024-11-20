@@ -2,7 +2,8 @@ spring:
   application:
     name: sheet
     datasource:
-      url: jdbc:postgresql://db:5432/sheet_db
+#      url: jdbc:postgresql://db:5432/sheet_db
+      url: h2:mem:sheet_db
       username: admin
       password: admin
       driver-class-name: org.postgresql.Driver
@@ -16,3 +17,7 @@ spring:
       properties:
         hibernate:
           dialect: org.hibrenate.dialect.PostgresSQLDialect
+application:
+  security:
+    jwt:
+      secret-key: 5db5fd9806de9b9e2d864edaf4905b29c8cda8a1f5576fcfb746d8b6f9d20e55
