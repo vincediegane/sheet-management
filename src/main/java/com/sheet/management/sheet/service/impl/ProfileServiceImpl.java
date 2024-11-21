@@ -1,5 +1,7 @@
 package com.sheet.management.sheet.service.impl;
 
+import com.sheet.management.sheet.dto.ClasseDTO;
+import com.sheet.management.sheet.dto.FicheDTO;
 import com.sheet.management.sheet.dto.ProfileDTO;
 import com.sheet.management.sheet.exception.AppException;
 import com.sheet.management.sheet.mapper.ProfileMapper;

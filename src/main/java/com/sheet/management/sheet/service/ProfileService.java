@@ -1,5 +1,7 @@
 package com.sheet.management.sheet.service;
 
+import com.sheet.management.sheet.dto.ClasseDTO;
+import com.sheet.management.sheet.dto.FicheDTO;
 import com.sheet.management.sheet.exception.AppException;
 import org.springframework.security.core.Authentication;
 import com.sheet.management.sheet.dto.ProfileDTO;
