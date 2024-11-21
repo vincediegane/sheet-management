@@ -22,18 +22,18 @@ import java.util.List;
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Long id;
     private String lastName;
     private String firstName;
     private String email;
     private String username;
     private String password;
-    private String address;
-    private String speciality;
     private Boolean status;
-    private String telephone;
     @NotNull
     private Role role;
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Profile profile;
     private Instant createdDate;
 
     @Override

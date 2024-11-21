@@ -10,5 +10,5 @@ public interface AuthService {
   AuthResponseDTO register(RegisterRequestDTO request);
   AuthResponseDTO authenticate(AuthRequestDTO request) throws AppException;
   UserDTO getCurrentUser() throws AppException;
-//  UserDTO getUserByProfile(Long profileId);
+  UserDTO getUserByProfile(Long profileId);
 }

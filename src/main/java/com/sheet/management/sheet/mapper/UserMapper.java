@@ -12,14 +12,11 @@ public class UserMapper {
         .username(userDTO.getUsername())
         .firstName(userDTO.getFirstName())
         .lastName(userDTO.getLastName())
-        .address(userDTO.getAddress())
-        .speciality(userDTO.getSpeciality())
         .email(userDTO.getEmail())
         .createdDate(userDTO.getCreatedDate())
         .role(userDTO.getRole())
         .password(userDTO.getPassword())
         .status(userDTO.getStatus())
-        .telephone(userDTO.getTelephone())
         .build();
   }
 
@@ -33,10 +30,7 @@ public class UserMapper {
         .email(user.getEmail())
         .role(user.getRole())
         .createdDate(user.getCreatedDate())
-        .address(user.getAddress())
         .status(user.getStatus())
-        .telephone(user.getTelephone())
-        .speciality(user.getSpeciality())
         .build();
   }
 }

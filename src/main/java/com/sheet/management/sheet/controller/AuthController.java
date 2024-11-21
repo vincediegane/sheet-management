@@ -81,8 +81,8 @@ public class AuthController {
     return ResponseEntity.ok(authService.authenticate(request));
   }
 
-//  @GetMapping("/user/profile/{profileId}")
-//  public UserDTO getUserByProfile(@PathVariable Long profileId) {
-//    return authService.getUserByProfile(profileId);
-//  }
+  @GetMapping("/user/profile/{profileId}")
+  public UserDTO getUserByProfile(@PathVariable Long profileId) {
+    return authService.getUserByProfile(profileId);
+  }
 }

@@ -46,7 +46,6 @@ public class AuthServiceImpl implements AuthService {
     var user = User.builder()
       .firstName(request.getFirstName())
       .lastName(request.getLastName())
-      .address(request.getLastName())
       .email(request.getEmail())
       .username(request.getEmail())
       .password(passwordEncoder.encode(request.getPassword()))
@@ -106,9 +105,9 @@ public class AuthServiceImpl implements AuthService {
     throw new AppException("No auth user found", HttpStatus.FORBIDDEN);
   }
 
-//  @Override
-//  public UserDTO getUserByProfile(Long profileId) {
-//    User user = userRepository.findByProfileId(profileId);
-//    return userMapper.fromUser(user);
-//  }
+  @Override
+  public UserDTO getUserByProfile(Long profileId) {
+    User user = userRepository.findByProfileId(profileId);
+    return userMapper.fromUser(user);
+  }
 }

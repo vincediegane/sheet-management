@@ -18,10 +18,7 @@ public class UserDTO {
   private String email;
   private String username;
   private String password;
-  private String address;
-  private String speciality;
   private Boolean status;
-  private String telephone;
   private Role role;
   private Instant createdDate;
 }

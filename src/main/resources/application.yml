@@ -1,22 +1,25 @@
 spring:
-  application:
-    name: sheet
-    datasource:
+  h2:
+    console:
+      enabled: true
+  datasource:
 #      url: jdbc:postgresql://db:5432/sheet_db
-      url: h2:mem:sheet_db
-      username: admin
-      password: admin
-      driver-class-name: org.postgresql.Driver
-      hikari:
-        maximum-pool-size: 10
-    jpa:
-      show-sql: true
-      generate-ddl: true
-      hibernate:
-        ddl-auto: update
-      properties:
-        hibernate:
-          dialect: org.hibrenate.dialect.PostgresSQLDialect
+    url: jdbc:h2:mem:sheet_db
+    username: admin
+    password: admin
+#      driver-class-name: org.postgresql.Driver
+    driver-class-name: org.h2.Driver
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+#      ddl-auto: update
+      ddl-auto: create-drop
+#    properties:
+#      hibernate:
+#        dialect: org.hibrenate.dialect.PostgresSQLDialect
 application:
   security:
     jwt:

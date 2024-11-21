@@ -21,18 +21,18 @@ import static org.springframework.security.config.http.SessionCreationPolicy.STA
 @EnableWebSecurity
 public class SecurityConfiguration {
   private static final String[] WHITE_LIST_URL = {
-      "/api/v1/auth/**",
-      "/v2/api-docs",
-      "/v3/api-docs",
-      "/v3/api-docs/**",
-      "/swagger-resources",
-      "/swagger-resources/**",
-      "/configuration/ui",
-      "/configuration/security",
-      "/webjars/**",
-      "/h2-console/**",
-      "/swagger-ui/**",
-      "/swagger-ui.html"
+    "/api/v1/auth/**",
+    "/v2/api-docs",
+    "/v3/api-docs",
+    "/v3/api-docs/**",
+    "/swagger-resources",
+    "/swagger-resources/**",
+    "/configuration/ui",
+    "/configuration/security",
+    "/webjars/**",
+    "/h2-console/**",
+    "/swagger-ui/**",
+    "/swagger-ui.html"
   };
   private final JwtAuthenticationFilter jwtAuthFilter;
   private final AuthenticationProvider authenticationProvider;
@@ -49,12 +49,12 @@ public class SecurityConfiguration {
         .csrf(AbstractHttpConfigurer::disable)
         .headers(h->h.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
         .authorizeHttpRequests(req ->
-            req.requestMatchers(WHITE_LIST_URL)
-                .permitAll()
-                .requestMatchers("/api/v1/auth/**").hasAnyRole(Role.ENSEIGNANT.name(), Role.ADMIN.name())
-                .requestMatchers("/api/v1/auth/**").hasAnyAuthority(Role.ENSEIGNANT.name(), Role.ADMIN.name())
-                .anyRequest()
-                .authenticated()
+          req.requestMatchers(WHITE_LIST_URL).permitAll()
+          .requestMatchers("/h2-console/**").permitAll()
+          .requestMatchers("/api/v1/auth/**").hasAnyRole(Role.USER.name(), Role.ADMIN.name())
+          .requestMatchers("/api/v1/auth/**").hasAnyAuthority(Role.USER.name(), Role.ADMIN.name())
+          .anyRequest()
+          .authenticated()
         )
         .sessionManagement(session -> session.sessionCreationPolicy(STATELESS))
         .authenticationProvider(authenticationProvider)
